@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require File.join(File.dirname(__FILE__), 'gilded_rose')
+require File.join(File.dirname(__FILE__), '../src/gilded_rose')
 require 'test/unit'
 
 # Inicializando prueba
