@@ -47,7 +47,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Never committed
+          Updated <time class='js-timeago' datetime='2024-01-11 21:28:30 -0600'>2024-01-11 21:28:30 -0600</time>
         
       </span>
     </div>
@@ -68,12 +68,12 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">34</span><small> lines of codes</small></div>
+              <div><span class="metric">36</span><small> lines of codes</small></div>
               <div><span class="metric">0</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">N/A</span><small> complexity/method</small></div>
-              <div><span class="metric">0</span><small> churn</small></div>
+              <div><span class="metric">1</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">0.0</span><small> complexity</small></div>
@@ -102,29 +102,31 @@
 # !/usr/bin/ruby -w
 
 require File.join(File.dirname(__FILE__), &#39;gilded_rose&#39;)
+require File.join(File.dirname(__FILE__), &#39;items/item.rb&#39;)
 
 puts &#39;OMGHAI!&#39;
-
 items = [
   Item.new(&#39;+5 Dexterity Vest&#39;, 10, 20),
   Item.new(&#39;Aged Brie&#39;, 2, 0),
-  Item.new(&#39;Elixir of the Mongoose&#39;, 5, 1),
+  Item.new(&#39;Elixir of the Mongoose&#39;, 5, 7),
   Item.new(&#39;Sulfuras, Hand of Ragnaros&#39;, 0, 80),
   Item.new(&#39;Sulfuras, Hand of Ragnaros&#39;, -1, 80),
-  Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 15, 10),
-  Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 10, 10),
-  Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 0, 10),
+  Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 15, 20),
+  Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 10, 20),
+  Item.new(&#39;Backstage passes to a TAFKAL80ETC concert&#39;, 5, 20),
   # This Conjured item does not work properly yet
-  Item.new(&#39;Conjured Mana Cake&#39;, 3, 6) # &lt;-- :O
+  Item.new(&#39;Conjured Mana Cake&#39;, 3, 6),
+  Item.new(&#39;Conjured Necklace&#39;, 3, 5),
+  Item.new(&#39;Conjured Water&#39;, 10, 50)
 ]
 
-days = 3
+days = 2
 days = ARGV[0].to_i + 1 if ARGV.size.positive?
 
 gilded_rose = GildedRose.new items
 (0...days).each do |day|
   puts &quot;-------- day #{day} --------&quot;
-  puts &#39;name, sellIn, quality&#39;
+  puts &#39;ellIn, quality&#39;
   items.each do |item|
     puts item
   end
